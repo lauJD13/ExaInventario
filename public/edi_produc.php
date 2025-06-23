@@ -1,7 +1,7 @@
 <?php
 include '../includes/auth.php';
 include '../includes/funtions.php';
-require '../includes/conexion.php';
+require '../sql/conexion.php';
 
 // Solo usuarios normales pueden acceder
 if (!isLoggedIn() || !isUsuario()) {

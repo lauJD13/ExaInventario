@@ -1,7 +1,7 @@
 <?php
 require_once '../includes/auth.php';
 require_once '../includes/funtions.php';
-require_once '../includes/conexion.php';
+require_once '../sql/conexion.php';
 
 
 if (!isLoggedIn() || !isUsuario()) {
