@@ -10,14 +10,14 @@ if (!isLoggedIn() || !isUsuario()) {
 }
 
 $mensaje = "";
-
+//Se obtienen datos enviados a traves del POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = trim($_POST['nombre']);
     $descripcion = trim($_POST['descripcion']);
     $cantidad = (int) $_POST['cantidad'];
     $precio = (float) $_POST['precio'];
     $foto = $_POST['foto'] ?? '';
-
+   //validacion de los campos 
     if (!$nombre || !$descripcion || $cantidad <= 0 || $precio <= 0 || !$foto) {
         $mensaje = "❌ Todos los campos son obligatorios y deben ser válidos.";
     } else {
@@ -70,6 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="number" name="precio" step="0.01" min="0.01" value="<?= $_POST['precio'] ?? '' ?>" required>
 
         <h4>Selecciona una imagen:</h4>
+        <!--Busca las imagenes y lista archivos de imagen-->
         <div class="galeria">
             <?php
             $imagenes = glob("../image/*.{jpg,jpeg,png,gif}", GLOB_BRACE);
