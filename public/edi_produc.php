@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <label>Precio:</label>
         <input type="number" name="precio" step="0.01" value="<?= $productos['precio'] ?>" required>
-
+        <!--Cambia la imagen actual--> 
         <label>Imagen actual:</label><br>
         <?php if (!empty($productos['foto']) && file_exists("../image/" . $productos['foto'])): ?>
             <img src="../image/<?= htmlspecialchars($productos['foto']) ?>" alt="Foto actual" width="100"><br>
