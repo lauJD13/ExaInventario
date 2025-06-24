@@ -2,7 +2,7 @@
 include  '../includes/auth.php';
 include '../includes/funtions.php';
  
-// crear o editar los usuarios
+// crear o editar los usuario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $accion = $_POST['accion'];
     $usuario = $_POST['usuario'];
@@ -35,7 +35,7 @@ if (isset($_GET['eliminar'])) {
     exit;
 }
  
-// Editar o consultar editario
+// Editar o consultar 
 $usuarios = getAllUsers();
 $usuarioEditar = null;
 if (isset($_GET['editar'])) {
