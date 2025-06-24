@@ -32,7 +32,7 @@ function createUser($usuario, $nombre, $apellidos, $correo, $contrasena, $tipo, 
     if (usuarioExiste($usuario)) {
         throw new Exception("⚠️ El usuario ya existe.");
     }
- 
+ //Crea la consulta para insertar nuevo registro
     $stmt = $pdo->prepare("INSERT INTO usuarios (usuario, nombre, apellidos, correo, contrasena, tipo, estado)
                             VALUES (:usuario, :nombre, :apellidos, :correo, :contrasena, :tipo, :estado)");
     $stmt->execute([
@@ -45,7 +45,7 @@ function createUser($usuario, $nombre, $apellidos, $correo, $contrasena, $tipo, 
         'estado' => $estado
     ]);
 }
- 
+ //editar usuario
 function updateUser($id, $usuario, $nombre, $apellidos, $correo, $contrasena, $tipo, $estado)
 {
     global $pdo;
@@ -107,7 +107,7 @@ function createProducto($nombre, $descripcion, $cantidad, $precio, $foto)
         'foto' => $foto
     ]);
 }
- 
+ //Editar Producto.
 function updateProducto($id, $nombre, $descripcion, $cantidad, $precio, $foto)
 {
     global $pdo;
