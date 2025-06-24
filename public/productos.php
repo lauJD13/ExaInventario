@@ -3,8 +3,6 @@ require_once '../includes/auth.php';
 require_once '../includes/funtions.php';
 require_once '../sql/conexion.php';
 
-//session_start();
-
 if (!isLoggedIn() || !isUsuario()) {
     header("Location: login.php");
     exit;
@@ -50,6 +48,7 @@ $productos = $stmt->fetchAll();
                 </tr>
             </thead>
             <tbody>
+                <!--Se crea visualizacion del catalogo-->
                 <?php foreach ($productos as $producto): ?>
                     <tr>
                         <td><?= $producto['id']; ?></td>
