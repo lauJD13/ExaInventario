@@ -3,36 +3,22 @@
 include '../includes/auth.php';
 include '../includes/funtions.php';
 
-/*Si no ha iniciado sesión, redirige al login
+//Verificar sesión
 if (!isLoggedIn()) {
     header('Location: login.php');
     exit;
 }
-// Redirige según el tipo de usuario
-if (isAdmin()) {
-// Continúa con el panel de administración
-    $users = getAllUsers();
-} elseif (isUsuario()) {
-    header('Location: crear_produc.php');
-    exit;
-} */
-
-// 1. Verificar sesión
-if (!isLoggedIn()) {
-    header('Location: login.php');
-    exit;
-}
-// 2. Redirección según el rol
+//si es usuario según el rol
 if (isUsuario()) {
     header('Location: crear_produc.php');
     exit;
 }
 if (!isAdmin()) {
-    // Si no es admin ni usuario, tal vez un rol no válido
+    // Si no es admin ni usuario
     header('Location: login.php');
     exit;
 }
-// 3. Solo si es admin, continuamos
+// Solo si es admin
 $users = getAllUsers();
 ?>
  
@@ -59,7 +45,7 @@ $users = getAllUsers();
     </div>
 
     <h2>Los Usuarios en Tabla:</h2>
-
+  <!--Tabla de usuarios-->
     <table>
         <thead>
             <tr>
@@ -74,6 +60,7 @@ $users = getAllUsers();
             </tr>
         </thead>
         <tbody>
+            <!--Se crea para las filas en la tabla-->
             <?php foreach ($users as $user): ?>
                 <tr>
                     <td><?= $user['id'] ?></td>
