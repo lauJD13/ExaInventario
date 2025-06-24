@@ -1,6 +1,4 @@
-/* ====================
-   Estilo general
-==================== */
+/*Estilo Principal*/
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #ffeaf3; /* fondo rosa pastel suave */
@@ -30,17 +28,13 @@ body {
     align-items: center;
     margin-bottom: 25px;
 }
-/* ====================
-   Encabezados
-==================== */
+/*Encabezados*/
 h1, h2, h3, h4 {
     color: #a94482;
     margin-bottom: 20px;
 }
 
-/* ====================
-   Formularios
-==================== */
+/*Formularios*/
 form label {
     display: block;
     margin-bottom: 6px;
@@ -63,9 +57,7 @@ textarea {
     font-size: 1em;
 }
 
-/* ====================
-   Botones
-==================== */
+/*Botones*/
 input[type="submit"],
 button,
 .button {
@@ -97,9 +89,7 @@ button:hover,
     margin: 0;
 }
 
-/* ====================
-   Tablas
-==================== */
+/*Tablas*/
 table {
     width: 95%;
     margin: 30px auto;
@@ -127,9 +117,7 @@ tr:hover {
     background-color: #fff7fa;
 }
 
-/* ====================
-   Galería de imágenes
-==================== */
+/*Galería de imágenes*/
 .galeria {
     display: flex;
     flex-wrap: wrap;
@@ -154,9 +142,7 @@ tr:hover {
     border-color: #bb1b5e;
 }
 
-/* ====================
-   Enlaces
-==================== */
+/*Enlaces*/
 a {
     color: #a94482;
     text-decoration: none;
